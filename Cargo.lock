@@ -133,7 +133,7 @@ dependencies = [
 [[package]]
 name = "embedded-graphics"
 version = "0.8.1"
-source = "git+https://github.com/inesvar/embedded-graphics.git?rev=eb7340266c#eb7340266cf31c97a85ebcbd2fbb53fba9cd5f9b"
+source = "git+https://github.com/inesvar/embedded-graphics.git?rev=cf1c8cd1%7E1#1df5b74111edcc7cd32ba8d0989c865e83c9ea41"
 dependencies = [
  "az",
  "embedded-graphics-core",
@@ -144,7 +144,7 @@ dependencies = [
 [[package]]
 name = "embedded-graphics-core"
 version = "0.4.0"
-source = "git+https://github.com/inesvar/embedded-graphics.git?rev=eb7340266c#eb7340266cf31c97a85ebcbd2fbb53fba9cd5f9b"
+source = "git+https://github.com/inesvar/embedded-graphics.git?rev=cf1c8cd1%7E1#1df5b74111edcc7cd32ba8d0989c865e83c9ea41"
 dependencies = [
  "az",
 ]
