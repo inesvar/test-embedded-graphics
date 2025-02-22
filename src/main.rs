@@ -7,7 +7,8 @@ use embedded_graphics::{
     pixelcolor::Rgb888,
     prelude::*,
     primitives::{
-        Circle, CornerRadii, Ellipse, Line, PrimitiveStyle, Rectangle, RoundedRectangle, Triangle,
+        Circle, CornerRadii, Ellipse, Line, PrimitiveStyle, PrimitiveStyleBuilder, Rectangle,
+        RoundedRectangle, StrokeAlignment, StrokeStyle, Triangle,
     },
 };
 use embedded_graphics_simulator::{OutputSettings, SimulatorDisplay, Window};
@@ -15,9 +16,9 @@ use embedded_graphics_simulator::{OutputSettings, SimulatorDisplay, Window};
 const PADDING: i32 = 16;
 const RECTANGLE_SIZES: [Size; 3] = [Size::new(10, 64), Size::new(42, 42), Size::new(48, 24)];
 const COLORS: [Rgb888; 3] = [
-    Rgb888::CSS_ORANGE_RED,
-    Rgb888::CSS_CRIMSON,
-    Rgb888::CSS_AQUAMARINE,
+    Rgb888::new(0xF8, 0xF4, 0xE3),
+    Rgb888::new(0x58, 0xA4, 0xB0),
+    Rgb888::new(0x0C, 0x7C, 0x59),
 ];
 
 /// Draws all embedded-graphics primitives.
@@ -27,9 +28,21 @@ where
 {
     for i in 0..3 {
         let rectangle_top_left = Point::new(64, 64) - RECTANGLE_SIZES[i];
+        let fill_style = PrimitiveStyleBuilder::from(&PrimitiveStyle::with_stroke(COLORS[i], w))
+            .stroke_alignment(StrokeAlignment::Center)
+            .build();
+        let dot_style = PrimitiveStyleBuilder::from(&fill_style)
+            .stroke_color(COLORS[(i + 1) % 3])
+            .stroke_style(Some(StrokeStyle::Dotted))
+            .build();
+
         Rectangle::new(rectangle_top_left, RECTANGLE_SIZES[i])
             .translate(Point::new(0, (64 + PADDING) * i as i32))
-            .into_styled(PrimitiveStyle::with_stroke(COLORS[i], w))
+            .into_styled(fill_style)
+            .draw(target)?;
+        Rectangle::new(rectangle_top_left, RECTANGLE_SIZES[i])
+            .translate(Point::new(0, (64 + PADDING) * i as i32))
+            .into_styled(dot_style)
             .draw(target)?;
     }
 
