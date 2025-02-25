@@ -14,6 +14,9 @@
 
 - répondre : OK
 - faire des comparaisons de start pour les small border width : OK
+- autoriser les coins vides : OK
+- vérifier que les petits rectangles ne sont pas cassés :
 - s'informer sur les tests dans embedded-graphics :
 - faire des tests pour le dotted :
 - vérifier que les examples sont pas cassés :
+- faire des examples dans ce repo, réorganiser :

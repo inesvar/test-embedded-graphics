@@ -7,8 +7,6 @@ precisely `border_size` in the code), trying to place a dot in the
 corner worsens the problem (now the dot diameter has to divide the
 length and height of the border).
 
-![](./screenshots/small_border_width.png)
-
 If not only dots but also spaces were accepted in the corners:
 
 - for a dot diameter of 1px (so a border width of 1px), it should be
@@ -23,11 +21,17 @@ So there would be less visual artefacts. However not drawing a dot in
 the corner might look weird for larger border widths, so there should
 be an explicit threshold.
 
-![](./screenshots/small_border_width_corrected.png)
+The original code had this result :
+
+![](./screenshots/various_rectangles_v1.png)
+
+While the new version uses a different algorithm for border widths of 1 and 2 px:
+
+![](./screenshots/various_rectangles_v2.png)
 
 ## Dotted border alignment
 
-code sha: ec6cfb16cfd1ab0ef81f9b06369c83fe1ebb0baf
+test code sha: ec6cfb16cfd1ab0ef81f9b06369c83fe1ebb0baf
 
 The following screenshots show that the dotted border is well aligned
 with the existing regular border.
