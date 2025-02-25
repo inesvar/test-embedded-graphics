@@ -5,11 +5,14 @@ edition = "2024"
 [dependencies]
 chrono = "0.4.19"
 eg-seven-segment = { git = "https://github.com/embedded-graphics/eg-seven-segment" }
-embedded-graphics = { git = "https://github.com/inesvar/embedded-graphics.git", branch = "master"  }
+# embedded-graphics = { git = "https://github.com/inesvar/embedded-graphics.git", branch = "master"  }
+embedded-graphics = { path = "../embedded-graphics" }
 embedded-graphics-simulator = { git = "https://github.com/embedded-graphics/simulator.git" }
 embedded-text = { git = "https://github.com/embedded-graphics/embedded-text.git" }
 
 [patch.crates-io]
-embedded-graphics = { git = "https://github.com/inesvar/embedded-graphics.git", branch = "master"  }
-embedded-graphics-core = { git = "https://github.com/inesvar/embedded-graphics.git", branch = "master"  }
+# embedded-graphics = { git = "https://github.com/inesvar/embedded-graphics.git", branch = "master"  }
+# embedded-graphics-core = { git = "https://github.com/inesvar/embedded-graphics.git", branch = "master"  }
+embedded-graphics = { path = "../embedded-graphics"  }
+embedded-graphics-core = { path = "../embedded-graphics/core"  }
 embedded-text = { git = "https://github.com/embedded-graphics/embedded-text.git" }

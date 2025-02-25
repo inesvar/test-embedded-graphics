@@ -11,6 +11,9 @@
 - préciser doc sur le support du stroke style : OK
 - vérifier doc : OK
 - vérifier que les tests passent toujours : OK
-- faire des tests pour le dotted :
+
+- répondre : OK
+- faire des comparaisons de start pour les small border width : OK
 - s'informer sur les tests dans embedded-graphics :
+- faire des tests pour le dotted :
 - vérifier que les examples sont pas cassés :
