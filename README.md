@@ -23,11 +23,11 @@ be an explicit threshold.
 
 The original code had this result :
 
-![](./screenshots/various_rectangles_v1.png)
+![](./screenshots_v1/small_border_width.png)
 
 While the new version uses a different algorithm for border widths of 1 and 2 px:
 
-![](./screenshots/various_rectangles_v2.png)
+![](./screenshots/small_border_width.png)
 
 ## Dotted border alignment
 

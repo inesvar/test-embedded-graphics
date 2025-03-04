@@ -19,4 +19,5 @@
 - s'informer sur les tests dans embedded-graphics :
 - faire des tests pour le dotted :
 - vérifier que les examples sont pas cassés :
-- faire des examples dans ce repo, réorganiser :
+- faire des examples dans ce repo, réorganiser : OK
+- refaire marcher README : 
