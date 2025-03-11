@@ -27,14 +27,17 @@ where
 {
     for i in 0..3 {
         let rectangle_top_left = Point::new(64, 64) - RECTANGLE_SIZES[i];
-        let fill_style =
-            PrimitiveStyleBuilder::from(&PrimitiveStyle::with_stroke(COLORS[i], width))
+        /*
+        let fill_style = PrimitiveStyleBuilder::from(&PrimitiveStyle::with_stroke(COLORS[i], width))
                 .stroke_alignment(stroke_alignment)
                 .build();
-        let dot_style = PrimitiveStyleBuilder::from(&fill_style)
-            .stroke_color(COLORS[(i + 1) % 3])
-            .stroke_style(Some(StrokeStyle::Dotted))
-            .build();
+        */
+        let fill_style = PrimitiveStyleBuilder::from(&PrimitiveStyle::with_fill(COLORS[i])).build();
+        let dot_style =
+            PrimitiveStyleBuilder::from(&PrimitiveStyle::with_stroke(COLORS[(i + 1) % 3], width))
+                .stroke_alignment(stroke_alignment)
+                .stroke_style(StrokeStyle::Dotted)
+                .build();
 
         Rectangle::new(rectangle_top_left, RECTANGLE_SIZES[i])
             .translate(Point::new(0, (64 + PADDING) * i as i32))
@@ -60,7 +63,7 @@ where
                 .build();
         let dot_style = PrimitiveStyleBuilder::from(&fill_style)
             .stroke_color(COLORS[(i + 1) % 3])
-            .stroke_style(Some(StrokeStyle::Dotted))
+            .stroke_style(StrokeStyle::Dotted)
             .build();
 
         let rectangle = Rectangle::new(rectangle_top_left, rectangle_size)
@@ -127,22 +130,22 @@ fn draw_squares_with_varying_size() -> Option<OutputImage<Rgb888>> {
 fn main() -> Result<(), ()> {
     draw_rectangles_with_varying_border_width(StrokeAlignment::Center)
         .expect("Oops")
-        .save_png("./screenshots/alignment_center.png")
+        .save_png("./screenshots_v6/alignment_center.png")
         .unwrap();
 
     draw_rectangles_with_varying_border_width(StrokeAlignment::Outside)
         .expect("Oops")
-        .save_png("./screenshots/alignment_outside.png")
+        .save_png("./screenshots_v6/alignment_outside.png")
         .unwrap();
 
     draw_rectangles_with_varying_border_width(StrokeAlignment::Inside)
         .expect("Oops")
-        .save_png("./screenshots/alignment_inside.png")
+        .save_png("./screenshots_v6/alignment_inside.png")
         .unwrap();
 
     draw_squares_with_varying_size()
         .expect("Oops")
-        .save_png("./screenshots/small_border_width.png")
+        .save_png("./screenshots_v6/small_border_width.png")
         .unwrap();
 
     Ok(())
